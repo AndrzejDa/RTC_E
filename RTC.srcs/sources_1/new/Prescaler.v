@@ -15,12 +15,15 @@ module Prescaler(
             counter <= 0;
             temp <= 0;
         end else if (clk_i) begin
-            if (counter == N/(2*(999*button_test_i)+1)) begin
+            if (counter >= N/2) begin
                 temp <= ~temp;
                 counter <= 1;                             
             end else begin
-                counter = counter + 1;    
-            end
+                if(button_test_i == 0)
+                    counter = counter + 1;
+                else 
+                    counter = counter + 1000;    
+            end 
         end
     end
     
