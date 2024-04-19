@@ -1,0 +1,90 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Fri Apr 19 20:36:13 2024
+| Host         : DESKTOP-NM8ULCN running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file rtc_control_sets_placed.rpt
+| Design       : rtc
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    21 |
+| Unused register locations in slices containing registers |    97 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      1 |            6 |
+|      2 |            4 |
+|      4 |            4 |
+|     10 |            1 |
+|     13 |            1 |
+|    16+ |            5 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              23 |           11 |
+| No           | No                    | Yes                    |               1 |            1 |
+| No           | Yes                   | No                     |              60 |           21 |
+| Yes          | No                    | No                     |              19 |           10 |
+| Yes          | No                    | Yes                    |              96 |           22 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------------------+-------------------------------+------------------------------+------------------+----------------+
+|          Clock Signal         |         Enable Signal         |       Set/Reset Signal       | Slice Load Count | Bel Load Count |
++-------------------------------+-------------------------------+------------------------------+------------------+----------------+
+|  decoder/E[1]                 |                               | decoder/AR[1]                |                1 |              1 |
+|  counter/E[1]                 |                               | counter/AR[1]                |                1 |              1 |
+|  decoder/seconds_reg[18]_4[1] |                               | decoder/seconds_reg[18]_3[1] |                1 |              1 |
+|  decoder/seconds_reg[18]_9[1] |                               | decoder/seconds_reg[18]_8[1] |                1 |              1 |
+|  dync/clk_1ms                 |                               | seg7/led7_an_o2[0]           |                1 |              1 |
+|  clk_i_IBUF_BUFG              |                               | rst_i_IBUF                   |                1 |              1 |
+|  decoder/E[0]                 |                               | decoder/AR[0]                |                1 |              2 |
+|  counter/E[0]                 |                               | counter/AR[0]                |                1 |              2 |
+|  decoder/seconds_reg[18]_9[0] |                               | decoder/seconds_reg[18]_8[0] |                1 |              2 |
+|  decoder/seconds_reg[18]_4[0] |                               | decoder/seconds_reg[18]_3[0] |                1 |              2 |
+|  decoder/E[2]                 |                               | decoder/AR[2]                |                1 |              4 |
+|  counter/E[2]                 |                               | counter/AR[2]                |                1 |              4 |
+|  decoder/seconds_reg[18]_4[2] |                               | decoder/seconds_reg[18]_3[2] |                1 |              4 |
+|  decoder/seconds_reg[18]_9[2] |                               | decoder/seconds_reg[18]_8[2] |                1 |              4 |
+|  clk_i_IBUF_BUFG              |                               |                              |                4 |             10 |
+|  dync/clk_1ms                 |                               |                              |                7 |             13 |
+|  pres/CLK                     | counter/seconds[18]_i_1_n_0   |                              |               10 |             19 |
+|  clk_i_IBUF_BUFG              |                               | dync/temp                    |                8 |             31 |
+|  clk_i_IBUF_BUFG              | pres/counter[31]_i_1__1_n_0   | rst_i_IBUF                   |                7 |             32 |
+|  clk_i_IBUF_BUFG              | db_hr/counter[31]_i_1_n_0     | rst_i_IBUF                   |                8 |             32 |
+|  clk_i_IBUF_BUFG              | db_min/counter[31]_i_1__0_n_0 | rst_i_IBUF                   |                7 |             32 |
++-------------------------------+-------------------------------+------------------------------+------------------+----------------+
+
+
